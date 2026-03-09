@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci | Project 3</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        iosBg: '#000000',
+                        iosCard: '#1c1c1e',
+                        iosAccent: '#0a84ff',
+                        iosDim: '#8e8e93',
+                        iosBorder: '#38383a',
+                        iosInput: '#2c2c2e',
+                        iosGreen: '#32d74b'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #38383a; border-radius: 10px; }
+        
+        .fib-spiral-overlay {
+            background: radial-gradient(circle at 100% 100%, transparent 50%, rgba(10, 132, 255, 0.08) 100%);
+        }
+    </style>
+</head>
+<body class="bg-iosBg text-white font-sans min-h-screen flex items-center justify-center overflow-hidden relative">
+
+    <div class="absolute inset-0 z-0 bg-[url('/public/bg.jpg')] bg-cover bg-center opacity-40 pointer-events-none"></div>
+
+    <div class="absolute inset-0 z-10 fib-spiral-overlay pointer-events-none"></div>
+
+    <main class="relative z-20 bg-iosCard/90 backdrop-blur-xl border border-iosBorder rounded-[28px] p-10 w-full max-w-[400px] shadow-[0_20px_50px_rgba(0,0,0,0.9)] text-center">
+        
+        <a href="/about" class="absolute top-5 right-6 text-iosAccent text-sm font-medium hover:opacity-80 transition-opacity">
+            About
+        </a>
+        
+        <header class="mb-8">
+            <h1 class="text-[2rem] font-semibold m-0 mb-2 tracking-tight">Fibonacci</h1>
+            <p class="text-iosDim text-[0.95rem] m-0">Project 03 in Python Series</p>
+        </header>
+
+        <form action="/calc" method="post" class="flex flex-col gap-4">
+            <input 
+                type="number" 
+                name="user_input" 
+                placeholder="Sequence length..." 
+                required 
+                min="1"
+                class="w-full p-4 bg-iosInput border border-iosBorder rounded-[14px] text-white text-base text-center outline-none focus:border-iosAccent transition-all"
+            >
+            <button 
+                type="submit"
+                class="w-full p-4 bg-iosAccent text-white border-none rounded-[14px] font-semibold text-base cursor-pointer hover:brightness-110 active:scale-[0.97] transition-all"
+            >
+                Generate
+            </button>
+        </form>
+
+        {% if result %}
+        <div class="mt-6 p-4 bg-iosInput rounded-[14px] text-left max-h-[180px] overflow-y-auto custom-scrollbar border border-iosBorder/50">
+            <span class="text-iosDim text-[10px] uppercase tracking-[2px] block mb-2 font-bold">Output</span>
+            <div class="text-iosGreen font-mono text-sm break-all leading-relaxed">
+                {{ result | join(', ') }}
+            </div>
+        </div>
+        {% endif %}
+    </main>
+
+    <script type="text/babel">
+        console.log("UI Refined: Image path updated to /public/bg.jpg");
+    </script>
+</body>
+</html>
