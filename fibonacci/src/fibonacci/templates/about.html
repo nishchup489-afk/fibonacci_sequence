@@ -70,8 +70,7 @@
 
             
 
-[Image of the Fibonacci sequence and the Golden Spiral]
-
+<img src="/public/OIP.jpg" alt="Image of the Fibonacci sequence and the Golden Spiral">
 
             <section class="bg-iosInput/50 rounded-2xl p-6 border border-iosBorder/50">
                 <h2 class="text-xl font-semibold mb-4 text-white">Mathematical Foundation</h2>
@@ -81,6 +80,33 @@
                 </div>
                 <p class="text-sm text-iosDim italic text-center">With seed values: F<sub>0</sub> = 0, F<sub>1</sub> = 1</p>
             </section>
+
+            <section class="bg-iosInput/50 rounded-2xl p-6 border border-iosBorder/50">
+    <h2 class="text-xl font-semibold mb-4 text-white">In Simple:</h2>
+    
+    <p class="text-iosDim mb-6">
+        There is a simple pattern: 
+        <span class="font-mono bg-white/10 px-1.5 py-0.5 rounded text-iosBlue">
+            Current = sum(previous two)
+        </span>
+    </p>
+
+    <div class="bg-black/40 p-6 rounded-xl font-mono border border-iosBorder mb-4">
+        <div class="text-2xl text-white mb-4 tracking-widest text-center">
+            0, 1, 1, 2, <span class="text-iosBlue underline decoration-2">3</span>, ...
+        </div>
+        
+        <div class="text-sm space-y-2 text-iosDim border-t border-iosBorder/30 pt-4">
+            <p>• 3rd number <b class="text-white">1</b> = 0 + 1</p>
+            <p>• 4th number <b class="text-white">2</b> = 1 + 1</p>
+            <p>• 5th number <b class="text-white">3</b> = 1 + 2</p>
+        </div>
+    </div>
+
+    <p class="text-sm text-iosDim italic text-center">
+        With seed values: F<sub>0</sub> = 0, F<sub>1</sub> = 1
+    </p>
+</section>
 
             <section>
                 <h2 class="text-xl font-semibold mb-4 text-white">Technical Implementation</h2>

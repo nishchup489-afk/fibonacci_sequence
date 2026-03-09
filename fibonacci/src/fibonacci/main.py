@@ -49,3 +49,10 @@ def calculate(request : Request , user_input: int = Form()):
             "result" : result
         }
     )
+
+@app.get("/about" , response_class=HTMLResponse)
+def about(request: Request):
+    return templates.TemplateResponse(
+        "about.html",
+        {"request" : request}
+    )
