@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Fibonacci Sequence</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        iosBg: '#000000',
+                        iosCard: '#1c1c1e',
+                        iosAccent: '#0a84ff',
+                        iosDim: '#8e8e93',
+                        iosBorder: '#38383a',
+                        iosInput: '#2c2c2e',
+                        iosGreen: '#32d74b'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #38383a; border-radius: 10px; }
+        
+        .glass-panel {
+            background: rgba(28, 28, 30, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-iosBg text-white font-sans min-h-screen flex items-center justify-center p-6 relative overflow-x-hidden">
+
+    <div class="absolute inset-0 z-0 bg-[url('/public/bg.jpg')] bg-cover bg-center opacity-30 pointer-events-none"></div>
+    <div class="absolute inset-0 z-10 bg-[radial-gradient(circle_at_0%_0%,rgba(10,132,255,0.1)_0%,transparent_50%)] pointer-events-none"></div>
+
+    <main class="relative z-20 glass-panel border border-iosBorder rounded-[32px] p-8 md:p-12 w-full max-w-2xl shadow-[0_24px_50px_rgba(0,0,0,0.9)] max-h-[90vh] overflow-y-auto custom-scrollbar">
+        
+        <nav class="mb-10">
+            <a href="/" class="inline-flex items-center text-iosAccent font-medium hover:opacity-70 transition-all group">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1 group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+                Back to Generator
+            </a>
+        </nav>
+
+        <header class="border-b border-iosBorder pb-8 mb-8">
+            <h1 class="text-4xl font-semibold tracking-tight mb-2">Project Overview</h1>
+            <p class="text-iosAccent font-mono text-sm tracking-widest uppercase">Project #3 of 100 Python Live Projects</p>
+        </header>
+
+        <div class="space-y-10">
+            
+            <section>
+                <h2 class="text-xl font-semibold mb-3 text-white">The Concept</h2>
+                <p class="text-iosDim leading-relaxed">
+                    This project explores the intersection of <strong>computational efficiency</strong> and modern <strong>web architecture</strong>. What began as a simple algorithm exercise evolved into a FastAPI web application focused on high-performance sequence generation and a premium, responsive user interface.
+                </p>
+            </section>
+
+            
+
+[Image of the Fibonacci sequence and the Golden Spiral]
+
+
+            <section class="bg-iosInput/50 rounded-2xl p-6 border border-iosBorder/50">
+                <h2 class="text-xl font-semibold mb-4 text-white">Mathematical Foundation</h2>
+                <p class="text-iosDim mb-4">The Fibonacci sequence follows a simple yet profound recurrence relation:</p>
+                <div class="bg-black/40 p-6 rounded-xl text-center font-mono text-lg mb-4 border border-iosBorder">
+                    <span class="text-iosAccent">F<sub>n</sub> = F<sub>n-1</sub> + F<sub>n-2</sub></span>
+                </div>
+                <p class="text-sm text-iosDim italic text-center">With seed values: F<sub>0</sub> = 0, F<sub>1</sub> = 1</p>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-semibold mb-4 text-white">Technical Implementation</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="p-4 border border-iosBorder rounded-2xl bg-iosCard">
+                        <h3 class="text-iosAccent font-semibold mb-2 text-sm uppercase">Algorithm</h3>
+                        <p class="text-iosDim text-sm">Uses an <strong>Iterative Approach</strong> with O(n) time complexity to prevent stack overflow issues common in recursion.</p>
+                    </div>
+                    <div class="p-4 border border-iosBorder rounded-2xl bg-iosCard">
+                        <h3 class="text-iosAccent font-semibold mb-2 text-sm uppercase">Infrastructure</h3>
+                        <p class="text-iosDim text-sm">Built with <strong>FastAPI</strong> and <strong>Poetry</strong>, deployed on <strong>Render</strong> for automated CI/CD and production stability.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="border-t border-iosBorder pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                    <div>
+                        <h2 class="text-lg font-semibold text-white">NISHTHUP</h2>
+                        <p class="text-iosDim text-sm">Tech Builder & Software Developer</p>
+                    </div>
+                    <div class="flex gap-4">
+                        <a href="https://github.com/nishchup489-afk" target="_blank" class="p-3 bg-iosInput rounded-full hover:bg-iosBorder transition-colors">
+                            <svg class="w-6 h-6 fill-white" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <footer class="mt-12 text-center text-iosDim text-xs font-mono uppercase tracking-widest">
+            Handcrafted with precision • 2026
+        </footer>
+    </main>
+
+    <script type="text/babel">
+        console.log("About page active.");
+    </script>
+</body>
+</html>
